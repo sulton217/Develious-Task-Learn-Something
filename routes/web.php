@@ -18,6 +18,3 @@ use App\Http\Controllers\StokBarangController;
 Route::get('/', function () {
     return view('welcome');
 });
-
-Route::resource('stokbarang', StokBarangController::class);
-

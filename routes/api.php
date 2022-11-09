@@ -34,14 +34,4 @@ Route::group(['middleware' => 'jwt.verify' , 'prefix' => 'auth'],function($route
     Route::post('/logout',[AuthController::class,'logout']);
  });
 
-// Route::prefix("contact")->group(function(){ // Deisgn Pattern Contact
-    Route::resource('contact',ContactController::class);  
-    Route::get('/{id}',[ContactController::class,'find_id']);
-   //  Route::delete('/{id}',[ContactController::class,'destroy']);
-//  });
-
- Route::prefix("post")->group(function(){ // Deisgn Pattern + Services
-    Route::resource('',PostController::class);   // Deisgn Pattern + Services
-    // Route::get('/post/create',[PostController::class,'store']);
- });
 
