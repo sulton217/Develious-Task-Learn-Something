@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Product;
 use Illuminate\Http\Request;
 use Validator;
+use Carbon\Carbon;
 class ProductController extends Controller
 {
     //
@@ -35,7 +36,10 @@ public function store(Request $request)
         if($validator->fails()){
             return $this->sendError('Validation Error.', $validator->errors());       
         }
-            $product = Product::create($input);
+            $product =Product::create([
+                    "name" => $request->name,
+                    "detail" => $request->detail,
+                ]);
             return response()->json([
             "success" => true,
             "message" => "Product created successfully.",
