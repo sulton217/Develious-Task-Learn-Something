@@ -6,7 +6,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\API\ProductController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\PostController;
-
+use App\Http\Controllers\Api\TodoListController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -39,6 +39,9 @@ Route::group(['middleware' => ['jwt.verify']], function () {
         Route::delete('delete/{id}',[ProductController::class,'destroy'])->name('Delete by id');
     });
 });
+
+
+Route::get('todo-list/{id}', [TodoListController::class, 'show'])->name('todo-list.show');
 
 
 

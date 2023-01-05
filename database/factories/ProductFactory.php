@@ -25,7 +25,6 @@ class ProductFactory extends Factory
             //
             'name' => $this->faker->sentence(2),
             'detail' => $this->faker->paragraph(10),
-
         ];
     }
 }
